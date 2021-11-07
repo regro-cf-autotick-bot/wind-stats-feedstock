@@ -1,5 +1,5 @@
 {% set name = "wind-stats" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wind-stats-{{ version }}.tar.gz
-  sha256: f9e510a3b4df8d578158c9b070625b85fe251c9f20cbd84629eea7deac049289
+  sha256: 520b97252167cfb7dc225f3bfc9c51cff41fcce177a90d0d3807227e9ec2324e
 
 build:
   number: 0

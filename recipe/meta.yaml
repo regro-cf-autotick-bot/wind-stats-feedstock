@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wind-stats-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wind-stats-{{ version }}.tar.gz
   sha256: 520b97252167cfb7dc225f3bfc9c51cff41fcce177a90d0d3807227e9ec2324e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - poetry-core >=1.0.0,<2.0.0
   run:
     - importlib-metadata >=3.4.0,<4.0.0
     - numpy >=1.19.4,<2.0.0
     - pint >=0.17.0,<0.18.0
-    - python >=3.7
+    - python >={{ python_min }}
     - scipy >=1.5.4,<2.0.0
     - typing-extensions >=3.7.4,<4.0.0
     - xarray >=0.17.0,<0.18.0
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/jules-ch/wind-stats
